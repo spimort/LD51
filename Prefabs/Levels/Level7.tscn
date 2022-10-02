@@ -1,0 +1,415 @@
+[gd_scene load_steps=16 format=3 uid="uid://2c81f45wjgvi"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/Level7.cs" id="1_o36ea"]
+[ext_resource type="PackedScene" uid="uid://dnrlv3kvp8f7y" path="res://Prefabs/Button.tscn" id="2_cp7od"]
+[ext_resource type="PackedScene" uid="uid://cymt7tubt00pr" path="res://Prefabs/Door.tscn" id="3_oc2i5"]
+[ext_resource type="FontFile" uid="uid://emaojvvk5lci" path="res://Assets/Fonts/Lobster-Regular.ttf" id="4_yyuvj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvrge"]
+size = Vector3(15, 0.25, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nos3t"]
+data = PackedVector3Array(-7.5, 0.125, 7.5, 7.5, 0.125, 7.5, -7.5, -0.125, 7.5, 7.5, 0.125, 7.5, 7.5, -0.125, 7.5, -7.5, -0.125, 7.5, 7.5, 0.125, -7.5, -7.5, 0.125, -7.5, 7.5, -0.125, -7.5, -7.5, 0.125, -7.5, -7.5, -0.125, -7.5, 7.5, -0.125, -7.5, 7.5, 0.125, 7.5, 7.5, 0.125, -7.5, 7.5, -0.125, 7.5, 7.5, 0.125, -7.5, 7.5, -0.125, -7.5, 7.5, -0.125, 7.5, -7.5, 0.125, -7.5, -7.5, 0.125, 7.5, -7.5, -0.125, -7.5, -7.5, 0.125, 7.5, -7.5, -0.125, 7.5, -7.5, -0.125, -7.5, 7.5, 0.125, 7.5, -7.5, 0.125, 7.5, 7.5, 0.125, -7.5, -7.5, 0.125, 7.5, -7.5, 0.125, -7.5, 7.5, 0.125, -7.5, -7.5, -0.125, 7.5, 7.5, -0.125, 7.5, -7.5, -0.125, -7.5, 7.5, -0.125, 7.5, 7.5, -0.125, -7.5, -7.5, -0.125, -7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bh5fe"]
+size = Vector3(15, 10, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtrlh"]
+size = Vector3(3, 0.25, 3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d6odo"]
+data = PackedVector3Array(-1.5, 0.125, 1.5, 1.5, 0.125, 1.5, -1.5, -0.125, 1.5, 1.5, 0.125, 1.5, 1.5, -0.125, 1.5, -1.5, -0.125, 1.5, 1.5, 0.125, -1.5, -1.5, 0.125, -1.5, 1.5, -0.125, -1.5, -1.5, 0.125, -1.5, -1.5, -0.125, -1.5, 1.5, -0.125, -1.5, 1.5, 0.125, 1.5, 1.5, 0.125, -1.5, 1.5, -0.125, 1.5, 1.5, 0.125, -1.5, 1.5, -0.125, -1.5, 1.5, -0.125, 1.5, -1.5, 0.125, -1.5, -1.5, 0.125, 1.5, -1.5, -0.125, -1.5, -1.5, 0.125, 1.5, -1.5, -0.125, 1.5, -1.5, -0.125, -1.5, 1.5, 0.125, 1.5, -1.5, 0.125, 1.5, 1.5, 0.125, -1.5, -1.5, 0.125, 1.5, -1.5, 0.125, -1.5, 1.5, 0.125, -1.5, -1.5, -0.125, 1.5, 1.5, -0.125, 1.5, -1.5, -0.125, -1.5, 1.5, -0.125, 1.5, 1.5, -0.125, -1.5, -1.5, -0.125, -1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_etvd4"]
+size = Vector3(40, 0.25, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_45sde"]
+data = PackedVector3Array(-20, 0.125, 7.5, 20, 0.125, 7.5, -20, -0.125, 7.5, 20, 0.125, 7.5, 20, -0.125, 7.5, -20, -0.125, 7.5, 20, 0.125, -7.5, -20, 0.125, -7.5, 20, -0.125, -7.5, -20, 0.125, -7.5, -20, -0.125, -7.5, 20, -0.125, -7.5, 20, 0.125, 7.5, 20, 0.125, -7.5, 20, -0.125, 7.5, 20, 0.125, -7.5, 20, -0.125, -7.5, 20, -0.125, 7.5, -20, 0.125, -7.5, -20, 0.125, 7.5, -20, -0.125, -7.5, -20, 0.125, 7.5, -20, -0.125, 7.5, -20, -0.125, -7.5, 20, 0.125, 7.5, -20, 0.125, 7.5, 20, 0.125, -7.5, -20, 0.125, 7.5, -20, 0.125, -7.5, 20, 0.125, -7.5, -20, -0.125, 7.5, 20, -0.125, 7.5, -20, -0.125, -7.5, 20, -0.125, 7.5, 20, -0.125, -7.5, -20, -0.125, -7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsl7g"]
+size = Vector3(1, 9.44318, 5.04484)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuyt4"]
+size = Vector3(3, 0.25, 3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ri45b"]
+data = PackedVector3Array(-1.5, 0.125, 1.5, 1.5, 0.125, 1.5, -1.5, -0.125, 1.5, 1.5, 0.125, 1.5, 1.5, -0.125, 1.5, -1.5, -0.125, 1.5, 1.5, 0.125, -1.5, -1.5, 0.125, -1.5, 1.5, -0.125, -1.5, -1.5, 0.125, -1.5, -1.5, -0.125, -1.5, 1.5, -0.125, -1.5, 1.5, 0.125, 1.5, 1.5, 0.125, -1.5, 1.5, -0.125, 1.5, 1.5, 0.125, -1.5, 1.5, -0.125, -1.5, 1.5, -0.125, 1.5, -1.5, 0.125, -1.5, -1.5, 0.125, 1.5, -1.5, -0.125, -1.5, -1.5, 0.125, 1.5, -1.5, -0.125, 1.5, -1.5, -0.125, -1.5, 1.5, 0.125, 1.5, -1.5, 0.125, 1.5, 1.5, 0.125, -1.5, -1.5, 0.125, 1.5, -1.5, 0.125, -1.5, 1.5, 0.125, -1.5, -1.5, -0.125, 1.5, 1.5, -0.125, 1.5, -1.5, -0.125, -1.5, 1.5, -0.125, 1.5, 1.5, -0.125, -1.5, -1.5, -0.125, -1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pest3"]
+size = Vector3(3, 0.25, 3)
+
+[node name="Level7" type="Node3D"]
+script = ExtResource("1_o36ea")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qvrge")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="MeshInstance3d"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d/StaticBody3d"]
+shape = SubResource("ConcavePolygonShape3D_nos3t")
+
+[node name="LevelArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="LevelArea"]
+shape = SubResource("BoxShape3D_bh5fe")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.36037, 0)
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.0724)
+mesh = SubResource("BoxMesh_wtrlh")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="MeshInstance3d3"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d3/StaticBody3d"]
+shape = SubResource("ConcavePolygonShape3D_d6odo")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.1737)
+mesh = SubResource("BoxMesh_etvd4")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="MeshInstance3d2"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d2/StaticBody3d"]
+shape = SubResource("ConcavePolygonShape3D_45sde")
+
+[node name="Doors" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103518, -29.5773)
+
+[node name="Door" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.04924, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 2.38419e-07)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door2" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.54877, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door2"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door2/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door2" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, -9.53674e-07)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door2/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door2/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door2/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door2/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door2/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door3" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.27127, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door3"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door3/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door3" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door3/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door3/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door3/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door3/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door3/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door4" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.8277, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door4"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door4/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door4" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door4/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door4/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door4/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door4/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door4/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door5" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.4944, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door5"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door5/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door5" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door5/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door5/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door5/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door5/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door5/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door6" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.9274, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door6"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door6/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door6" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door6/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door6/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door6/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door6/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door6/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door7" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.4278, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door7"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door7/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door7" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door7/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door7/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door7/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door7/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door7/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door8" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.70533, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door8"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door8/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door8" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, 0)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door8/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door8/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door8/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door8/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door8/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door9" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.14893, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door9"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door9/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door9" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, -9.53674e-07)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door9/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door9/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door9/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door9/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door9/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="Door10" parent="Doors" instance=ExtResource("3_oc2i5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.48224, 0, 0)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Doors/Door10"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door10/StaticBody3d"]
+shape = SubResource("BoxShape3D_gsl7g")
+
+[node name="Button" parent="Doors/Door10" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05621, 0, -2.38419e-07)
+IsValid = true
+UseDelay = false
+
+[node name="MovingPlatformPosition" type="Marker3D" parent="Doors/Door10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1778, 0, 2.38419e-07)
+
+[node name="AnimatableBody3d" type="AnimatableBody3D" parent="Doors/Door10/MovingPlatformPosition"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="Doors/Door10/MovingPlatformPosition/AnimatableBody3d"]
+mesh = SubResource("BoxMesh_tuyt4")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door10/MovingPlatformPosition/AnimatableBody3d"]
+shape = SubResource("ConcavePolygonShape3D_ri45b")
+disabled = true
+
+[node name="Area3d" type="Area3D" parent="Doors/Door10/MovingPlatformPosition/AnimatableBody3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294115, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Doors/Door10/MovingPlatformPosition/AnimatableBody3d/Area3d"]
+shape = SubResource("BoxShape3D_pest3")
+disabled = true
+
+[node name="FinalPosition" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51.8467)
+
+[node name="Label3d" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -4.92623, 0.13, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0)
+text = "So many doors...
+but one will let you win!"
+font = ExtResource("4_yyuvj")
+font_size = 295

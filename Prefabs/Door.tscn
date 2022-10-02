@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cymt7tubt00pr"]
+
+[ext_resource type="PackedScene" uid="uid://4fx6h7ckljbu" path="res://Assets/Models/door.glb" id="1_6h6m7"]
+[ext_resource type="Script" path="res://Scripts/Door.cs" id="2_48qlr"]
+[ext_resource type="AudioStream" uid="uid://dygetyfmpujeh" path="res://Assets/Sounds/door_open.mp3" id="3_guxg4"]
+
+[sub_resource type="Animation" id="Animation_qunbo"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_guxg4")
+}],
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qsx28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2elb"]
+_data = {
+"Open": SubResource("Animation_qunbo"),
+"RESET": SubResource("Animation_qsx28")
+}
+
+[node name="Door" instance=ExtResource("1_6h6m7")]
+script = ExtResource("2_48qlr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_k2elb")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_guxg4")

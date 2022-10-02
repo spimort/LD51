@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnrlv3kvp8f7y"]
+
+[ext_resource type="PackedScene" uid="uid://702lu1nc5m0j" path="res://Assets/Models/button.glb" id="1_0pqpp"]
+[ext_resource type="Script" path="res://Scripts/ButtonTrigger.cs" id="2_p3ciy"]
+[ext_resource type="AudioStream" uid="uid://c0oqn8efnvx8c" path="res://Assets/Sounds/click.wav" id="3_25qgf"]
+[ext_resource type="AudioStream" uid="uid://dmfuvxvh1crhj" path="res://Assets/Sounds/valid.wav" id="4_75s5n"]
+[ext_resource type="AudioStream" uid="uid://r7kh155buewg" path="res://Assets/Sounds/wrong.mp3" id="5_ve8t3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk2uq"]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 3
+albedo_color = Color(1, 0.00784314, 0.152941, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfgpo"]
+size = Vector3(1.63035, 1, 1.49937)
+
+[sub_resource type="Animation" id="Animation_h1wnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube001:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.00784314, 0.152941, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube001/OmniLight3d:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.635294, 0, 0.121569, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ngool"]
+resource_name = "Valid"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube001:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.85098, 0.701961, 0, 1), Color(0.235294, 0.901961, 0, 1), Color(0.235294, 0.901961, 0, 1), Color(1, 0.00784314, 0.152941, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube001/OmniLight3d:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.85098, 0.701961, 0, 1), Color(0.235294, 0.901961, 0, 1), Color(0.235294, 0.901961, 0, 1), Color(1, 0.00784314, 0.152941, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l4ndr"]
+resource_name = "Validating"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube001:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.00784314, 0.152941, 1), Color(0.85098, 0.701961, 0, 1), Color(0.85098, 0.701961, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube001/OmniLight3d:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.635294, 0, 0.121569, 1), Color(0.85098, 0.701961, 0, 1), Color(0.85098, 0.701961, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_025jw"]
+_data = {
+"RESET": SubResource("Animation_h1wnh"),
+"Valid": SubResource("Animation_ngool"),
+"Validating": SubResource("Animation_l4ndr")
+}
+
+[node name="Button" instance=ExtResource("1_0pqpp")]
+script = ExtResource("2_p3ciy")
+
+[node name="Cube001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kk2uq")
+
+[node name="OmniLight3d" type="OmniLight3D" parent="Cube001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.451836, 0)
+light_color = Color(0.635294, 0, 0.121569, 1)
+light_specular = 15.962
+omni_range = 0.914557
+
+[node name="Area3d" type="Area3D" parent="." index="2"]
+unique_name_in_owner = true
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Area3d" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.904094, 0)
+shape = SubResource("BoxShape3D_tfgpo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_025jw")
+}
+
+[node name="Timer" type="Timer" parent="." index="4"]
+unique_name_in_owner = true
+
+[node name="ValidatingSound" type="AudioStreamPlayer" parent="." index="5"]
+unique_name_in_owner = true
+stream = ExtResource("3_25qgf")
+
+[node name="ValidSound" type="AudioStreamPlayer" parent="." index="6"]
+unique_name_in_owner = true
+stream = ExtResource("4_75s5n")
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="." index="7"]
+unique_name_in_owner = true
+stream = ExtResource("5_ve8t3")

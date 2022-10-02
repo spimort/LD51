@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://h5aiib7ixdo4"]
+
+[ext_resource type="Script" path="res://Scripts/FogWall.cs" id="1_ikey5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_miqjk"]
+albedo_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pd85s"]
+material = SubResource("StandardMaterial3D_miqjk")
+
+[sub_resource type="Curve" id="Curve_584pj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3b4fd"]
+size = Vector3(1000, 1000, 614.497)
+
+[node name="Fog" type="Node3D"]
+script = ExtResource("1_ikey5")
+
+[node name="CpuParticles3d" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 530.224, 0)
+amount = 2000
+lifetime = 3.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("SphereMesh_pd85s")
+emission_shape = 3
+emission_box_extents = Vector3(1000, 500, 0)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 100.0
+scale_amount_max = 200.0
+scale_amount_curve = SubResource("Curve_584pj")
+
+[node name="Area3d" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -62.5763)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Area3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 331.777)
+shape = SubResource("BoxShape3D_3b4fd")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://crq55mci6kf80"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/Level6.cs" id="1_f8e5u"]
+[ext_resource type="PackedScene" uid="uid://dnrlv3kvp8f7y" path="res://Prefabs/Button.tscn" id="2_cp7od"]
+[ext_resource type="PackedScene" uid="uid://cymt7tubt00pr" path="res://Prefabs/Door.tscn" id="3_rnm00"]
+[ext_resource type="FontFile" uid="uid://emaojvvk5lci" path="res://Assets/Fonts/Lobster-Regular.ttf" id="4_y28i0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvrge"]
+size = Vector3(15, 0.25, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nos3t"]
+data = PackedVector3Array(-7.5, 0.125, 7.5, 7.5, 0.125, 7.5, -7.5, -0.125, 7.5, 7.5, 0.125, 7.5, 7.5, -0.125, 7.5, -7.5, -0.125, 7.5, 7.5, 0.125, -7.5, -7.5, 0.125, -7.5, 7.5, -0.125, -7.5, -7.5, 0.125, -7.5, -7.5, -0.125, -7.5, 7.5, -0.125, -7.5, 7.5, 0.125, 7.5, 7.5, 0.125, -7.5, 7.5, -0.125, 7.5, 7.5, 0.125, -7.5, 7.5, -0.125, -7.5, 7.5, -0.125, 7.5, -7.5, 0.125, -7.5, -7.5, 0.125, 7.5, -7.5, -0.125, -7.5, -7.5, 0.125, 7.5, -7.5, -0.125, 7.5, -7.5, -0.125, -7.5, 7.5, 0.125, 7.5, -7.5, 0.125, 7.5, 7.5, 0.125, -7.5, -7.5, 0.125, 7.5, -7.5, 0.125, -7.5, 7.5, 0.125, -7.5, -7.5, -0.125, 7.5, 7.5, -0.125, 7.5, -7.5, -0.125, -7.5, 7.5, -0.125, 7.5, 7.5, -0.125, -7.5, -7.5, -0.125, -7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bh5fe"]
+size = Vector3(15, 10, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdxsq"]
+size = Vector3(24.9325, 10.3253, 1)
+
+[node name="Level6" type="Node3D"]
+script = ExtResource("1_f8e5u")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qvrge")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="MeshInstance3d"]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d/StaticBody3d"]
+shape = SubResource("ConcavePolygonShape3D_nos3t")
+
+[node name="Buttons" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Button" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.61141, 0, 0)
+
+[node name="Button2" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.61141, 0, 2.88634)
+
+[node name="Button3" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.61141, 0, 5.67932)
+
+[node name="Button4" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63766, 0, 5.67932)
+
+[node name="Button5" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63766, 0, 2.95853)
+
+[node name="Button6" parent="Buttons" instance=ExtResource("2_cp7od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63766, 0, -0.0314527)
+
+[node name="LevelArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="LevelArea"]
+shape = SubResource("BoxShape3D_bh5fe")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.36037, 0)
+
+[node name="Door" parent="." instance=ExtResource("3_rnm00")]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -7.38136)
+
+[node name="DoorCollision" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.384086, 0, -7.5538)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="DoorCollision"]
+shape = SubResource("BoxShape3D_tdxsq")
+
+[node name="Label3d" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0.13, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0)
+text = "Keep pressing, there
+is only one good option!"
+font = ExtResource("4_y28i0")
+font_size = 295

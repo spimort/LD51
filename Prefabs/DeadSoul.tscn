@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bar1c8jimusdh"]
+
+[ext_resource type="Script" path="res://Scripts/DeadSoul.cs" id="1_a775n"]
+[ext_resource type="Texture2D" uid="uid://xqydl27p10o1" path="res://Assets/Images/creepy_face.png" id="1_nudxo"]
+[ext_resource type="AudioStream" uid="uid://ci0gt3krjq3iy" path="res://Assets/Sounds/growl.mp3" id="2_4rrw1"]
+
+[node name="DeadSoul" type="Node3D"]
+script = ExtResource("1_a775n")
+
+[node name="Sprite3d" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_nudxo")
+
+[node name="AudioStreamPlayer3d" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_4rrw1")
+unit_db = -12.973
+unit_size = 4.6

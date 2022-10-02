@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqd7t750mtwcl"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_h5unx"]
+[ext_resource type="PackedScene" uid="uid://1ldjxlmm1ovm" path="res://Assets/Models/hands.glb" id="2_j0l0h"]
+[ext_resource type="AudioStream" uid="uid://c8woc1u54i08e" path="res://Assets/Sounds/walk.wav" id="3_uio7o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mevou"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfoci"]
+
+[node name="Player" type="CharacterBody3D"]
+floor_constant_speed = true
+script = ExtResource("1_h5unx")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_mevou")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gfoci")
+
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.771537, 0)
+
+[node name="Camera3d" type="Camera3D" parent="Head"]
+unique_name_in_owner = true
+current = true
+
+[node name="hands" parent="Head" instance=ExtResource("2_j0l0h")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.2405, -0.396556)
+visible = false
+
+[node name="WalkAudioStream" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_uio7o")

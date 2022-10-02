@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8jjlg87eco5a"]
+
+[ext_resource type="Texture2D" uid="uid://bf1pjjfp4kcx3" path="res://Assets/Images/titlescreen.png" id="1_lqhxg"]
+[ext_resource type="Script" path="res://Scripts/Win.cs" id="1_tqf67"]
+[ext_resource type="FontFile" uid="uid://emaojvvk5lci" path="res://Assets/Fonts/Lobster-Regular.ttf" id="2_l7nb8"]
+
+[sub_resource type="Animation" id="Animation_ehfd0"]
+resource_name = "EnterMenu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ee1fm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ky7mo"]
+resource_name = "StartGame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyeir"]
+_data = {
+"EnterMenu": SubResource("Animation_ehfd0"),
+"RESET": SubResource("Animation_ee1fm"),
+"StartGame": SubResource("Animation_ky7mo")
+}
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqf67")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lqhxg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 110.0
+offset_top = 77.0
+offset_right = 720.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/line_spacing = -28
+theme_override_fonts/font = ExtResource("2_l7nb8")
+theme_override_font_sizes/font_size = 100
+text = "Congratulation,
+You won!"
+
+[node name="StartButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 114.0
+offset_top = 294.0
+offset_right = 213.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l7nb8")
+theme_override_font_sizes/font_size = 45
+text = "Try again"
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 114.0
+offset_top = 360.0
+offset_right = 213.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l7nb8")
+theme_override_font_sizes/font_size = 45
+text = "Quit"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+autoplay = "EnterMenu"
+libraries = {
+"": SubResource("AnimationLibrary_uyeir")
+}
