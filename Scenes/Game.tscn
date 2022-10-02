@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cuxxy57ql2wq8"]
+[gd_scene load_steps=21 format=3 uid="uid://cuxxy57ql2wq8"]
 
 [ext_resource type="Script" path="res://Scripts/Game.cs" id="1_1j8ga"]
 [ext_resource type="PackedScene" uid="uid://bqd7t750mtwcl" path="res://Prefabs/Player.tscn" id="1_724vu"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://1phsc2ogatse" path="res://Assets/Sounds/wind.mp3" id="11_y6t61"]
 [ext_resource type="AudioStream" uid="uid://bfvkr6bnx6fe2" path="res://Assets/Sounds/ambient_music.mp3" id="13_ajnl1"]
 [ext_resource type="PackedScene" uid="uid://bih6wqwbfo4tv" path="res://Assets/Models/home.glb" id="13_x1ves"]
+[ext_resource type="AudioStream" uid="uid://7rqhcgle7cmp" path="res://Assets/Sounds/10sec.wav" id="15_eaufe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avnwj"]
 albedo_color = Color(0.109804, 0.827451, 0.858824, 1)
@@ -133,5 +134,10 @@ light_volumetric_fog_energy = 0.0
 stream = ExtResource("13_ajnl1")
 volume_db = -13.492
 autoplay = true
+
+[node name="10SecondPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_eaufe")
+volume_db = -12.368
 
 [editable path="House/home"]

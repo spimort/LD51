@@ -15,6 +15,7 @@ public partial class Game : Node {
 	private Node3D _groundDeads;
 	private PackedScene _deadSoulPrefab;
 	private AudioStreamPlayer3D _soundPlayer;
+	private AudioStreamPlayer _10SecondPlayer;
 
     public override void _Ready() {
         base._Ready();
@@ -25,6 +26,7 @@ public partial class Game : Node {
 		this._fog = this.GetNode<FogWall>("%Fog");
 		this._deadZone = this.GetNode<Area3D>("%DeadZone");
 		this._groundDeads = this.GetNode<Node3D>("%GroundDeads");
+		this._10SecondPlayer = this.GetNode<AudioStreamPlayer>("%10SecondPlayer");
 
 		var levelsNode = this.GetNode<Node3D>("%Levels");
 		var numberOfLevels = levelsNode.GetChildCount();
@@ -80,6 +82,7 @@ public partial class Game : Node {
 
 	private void Every10Seconds() {
 		this._fog.Translate(new Vector3(0, 0, -FogMoveSpeed));
+		this._10SecondPlayer.Play();
 	}
 
 	private void OnPlayerEnterDeadZone(Node3D body) {

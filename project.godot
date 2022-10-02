@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Ld 51"
+config/name="Don't look back"
 run/main_scene="res://Scenes/Menu.tscn"
-config/features=PackedStringArray("4.0", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/show_image=false
+config/icon="res://Assets/Images/game_icon.png"
 
 [debug]
 
@@ -22,6 +23,7 @@ settings/stdout/print_fps=true
 
 [display]
 
+window/size/mode=2
 window/vsync/vsync_mode=0
 
 [dotnet]

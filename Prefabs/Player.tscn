@@ -33,3 +33,4 @@ visible = false
 [node name="WalkAudioStream" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_uio7o")
+volume_db = 3.373

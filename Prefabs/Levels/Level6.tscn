@@ -51,6 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63766, 0, -0.0314527)
 
 [node name="LevelArea" type="Area3D" parent="."]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="LevelArea"]
 shape = SubResource("BoxShape3D_bh5fe")
